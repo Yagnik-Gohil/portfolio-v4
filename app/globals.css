@@ -1,7 +1,97 @@
 @import "tailwindcss";
 
+/* =========
+   1️⃣ Base setup
+   ========= */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* =========
+   2️⃣ Font variables (from next/font)
+   ========= */
+:root {
+  --font-heading: 'Anton', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+:root {
+  --background: 210 60% 98%;
+  --foreground: 230 25% 20%;
+
+  --accent-primary: 330 65% 80%;
+  --accent-secondary: 190 60% 80%;
+  --accent-tertiary: 260 55% 85%;
+
+  --muted: 210 30% 92%;
+  --border: 220 20% 85%;
+
+  --success: 140 35% 70%;
+  --warning: 40 65% 80%;
+  --error: 0 60% 75%;
+}
+
+.dark {
+  --background: 230 25% 10%;
+  --foreground: 210 30% 96%;
+
+  --accent-primary: 330 60% 75%;
+  --accent-secondary: 190 55% 70%;
+  --accent-tertiary: 260 50% 75%;
+
+  --muted: 220 20% 18%;
+  --border: 220 15% 30%;
+
+  --success: 140 30% 60%;
+  --warning: 40 55% 70%;
+  --error: 0 50% 65%;
+}
+
+
+/* =========
+   5️⃣ Typography
+   ========= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+/* =========
+   6️⃣ Optional pastel accents
+   ========= */
+button {
+  background: hsl(var(--accent));
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--border));
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+/* =========
+   7️⃣ Animation (your existing one)
+   ========= */
+@keyframes snakeFlow {
+  0% {
+    stroke-dashoffset: 1800;
+    opacity: 0.4;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 1800;
+    opacity: 0.4;
+  }
 }
