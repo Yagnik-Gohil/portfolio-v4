@@ -67,8 +67,7 @@ export default function Bookshelf() {
 
         <h1 className="text-4xl sm:text-5xl font-bold mt-4">My Bookshelf</h1>
         <p className="text-base sm:text-lg leading-relaxed mt-3 opacity-85">
-          A small collection of books — from
-          philosophy to science and fiction.
+          A small collection of books — from philosophy to science and fiction.
         </p>
       </motion.section>
 
@@ -84,36 +83,35 @@ export default function Bookshelf() {
         >
           <h2 className="text-2xl font-semibold">{section.genre}</h2>
 
-          <div className="flex flex-wrap gap-5 sm:gap-6">
-  {section.books.map((src, i) => (
-    <motion.div
-      key={src}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: i * 0.05 }}
-      whileHover={{ y: -3 }}
-      className="
-        aspect-[3/4] w-[120px] sm:w-[150px]
-        overflow-hidden rounded-lg
+          <div className="flex flex-wrap items-end gap-5 sm:gap-6">
+            {section.books.map((src, i) => (
+              <motion.div
+                key={src}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                whileHover={{ y: -3 }}
+                className="
+        rounded-lg overflow-hidden
         border border-[hsl(var(--border))]/40
         bg-[hsl(var(--muted))]/15
         hover:bg-[hsl(var(--muted))]/25
         transition-all duration-300
+        flex items-end
       "
-    >
-      <Image
-        src={src}
-        alt={src}
-        width={300}
-        height={400}
-        className="w-full h-full object-fit"
-        unoptimized
-      />
-    </motion.div>
-  ))}
-</div>
-
+              >
+                <Image
+                  src={src}
+                  alt={src}
+                  width={300}
+                  height={400}
+                  className="h-[160px] sm:h-[190px] w-auto object-contain"
+                  unoptimized
+                />
+              </motion.div>
+            ))}
+          </div>
         </motion.section>
       ))}
     </div>
