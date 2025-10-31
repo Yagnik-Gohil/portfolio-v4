@@ -14,7 +14,9 @@ export default function Navbar() {
   // 🌗 Initialize theme safely
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
     const currentTheme = savedTheme || (prefersDark ? "dark" : "light");
 
     document.documentElement.classList.toggle("dark", currentTheme === "dark");
@@ -44,7 +46,6 @@ export default function Navbar() {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/articles", label: "Articles" },
-    { href: "/dsa-journal", label: "DSA Journal" },
     { href: "/library", label: "Bookshelf" },
     { href: "/contact", label: "Contact" },
   ];
