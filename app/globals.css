@@ -14,7 +14,7 @@ body {
    2️⃣ Font variables (from next/font)
    ========= */
 :root {
-  --font-heading: 'Anton', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
   --font-body: 'Inter', sans-serif;
 }
 :root {
@@ -82,16 +82,16 @@ button:hover {
 @keyframes snakeFlow {
   0% {
     stroke-dashoffset: 1800;
-    opacity: 0.4;
+    opacity: 1;
   }
 
   50% {
     stroke-dashoffset: 0;
-    opacity: 1;
+    opacity: 0.6;
   }
 
   100% {
     stroke-dashoffset: 1800;
-    opacity: 0.4;
+    opacity: 1;
   }
 }

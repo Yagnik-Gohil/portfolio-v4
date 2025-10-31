@@ -2,12 +2,13 @@ export default function Footer() {
   return (
     <footer
       className="
-        fixed bottom-4 left-1/2 -translate-x-1/2
+        w-full
+        text-center
         text-[hsl(var(--foreground))]
         text-sm
         opacity-70
-        transition-opacity duration-300
-        hover:opacity-100
+        py-10
+        mt-20
       "
     >
       <p>&copy; 2025 Yagnik Gohil. All rights reserved.</p>

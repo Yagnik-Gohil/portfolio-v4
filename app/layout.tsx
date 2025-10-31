@@ -2,18 +2,20 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { Anton, Inter } from "next/font/google";
+import { Poppins, Inter } from "next/font/google";
 
-export const headingFont = Anton({
-  weight: "400",
+export const headingFont = Poppins({
+  weight: "900",
   subsets: ["latin"],
   variable: "--font-heading",
+  display: "swap",
 });
 
 export const bodyFont = Inter({
   weight: ["400", "500"],
   subsets: ["latin"],
   variable: "--font-body",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -88,7 +90,9 @@ export default function RootLayout({
         className={`${headingFont.variable} ${bodyFont.variable} antialiased`}
       >
         <Navbar />
-        {children}
+        <div className="pt-20 sm:pt-24 md:pt-28 min-h-screen flex flex-col">
+          {children}
+        </div>
         <Footer />
       </body>
     </html>

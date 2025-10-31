@@ -41,11 +41,12 @@ export default function Navbar() {
   }, [lastScrollY]);
 
   const navLinks = [
-    { href: "#about", label: "About" },
-    { href: "#articles", label: "Articles" },
-    { href: "/leetcode", label: "DSA Journal" },
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/articles", label: "Articles" },
+    { href: "/dsa-journal", label: "DSA Journal" },
     { href: "/library", label: "Bookshelf" },
-    { href: "#contact", label: "Contact" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (
