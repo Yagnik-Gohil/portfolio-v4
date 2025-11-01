@@ -44,7 +44,7 @@ export default async function SeriesPage({
   const { title, description, tags, posts } = series;
 
   return (
-    <div className="container mx-auto px-6 sm:px-10 md:px-16 lg:px-24 py-24 max-w-4xl">
+    <div className="container mx-auto px-6 sm:px-10 md:px-16 lg:px-24 py-24 space-y-32">
       {/* Header */}
       <header className="mb-12">
         <Link

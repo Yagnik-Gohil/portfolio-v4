@@ -16,46 +16,39 @@ export interface Series {
 // ---- Data ----
 export const allSeries: Series[] = [
   {
-    title: "Learn Docker Series",
-    slug: "learn-docker-series",
+    title: "Learn Docker",
+    slug: "docker",
     description:
-      "A step-by-step guide to mastering Docker — from basics to production-ready containers.",
+      "This series presents Docker concepts in a clear and structured manner, covering essential topics from basic containerization to deployment.",
     tags: ["Docker", "DevOps", "Containers"],
     posts: [
       {
-        title: "Introduction to Docker",
-        slug: "docker-introduction",
+        title: "What is Docker & Docker Hub",
+        slug: "what-is-docker",
         description:
-          "Get started with containerization by understanding what Docker is and why it matters.",
-        tags: ["Docker", "Containers"],
+          "Explore what Docker is, its purpose, core concepts, and how Docker Hub helps share and fetch container images.",
+        tags: ["Docker"],
       },
       {
-        title: "Docker Images & Containers",
-        slug: "docker-images-containers",
+        title: "Understanding Containers",
+        slug: "containers",
         description:
-          "Learn how Docker images are built, stored, and turned into running containers.",
+          "Learn about containers, how they differ from virtual machines, and how to run, stop, and manage them effectively.",
         tags: ["Docker", "Images", "Containers"],
       },
       {
-        title: "Dockerfile Deep Dive",
-        slug: "dockerfile-deep-dive",
+        title: "Storage & Volumes",
+        slug: "volumes",
         description:
-          "Master writing efficient Dockerfiles with best practices and real-world tips.",
-        tags: ["Docker", "Dockerfile", "DevOps"],
+          "Understand Docker volumes and how to persist data safely across containers.",
+        tags: ["Docker", "Volumes"],
       },
       {
-        title: "Docker Compose Basics",
-        slug: "docker-compose-basics",
+        title: "Managing & Inspecting Containers",
+        slug: "managing-and-inspecting-containers",
         description:
-          "Simplify multi-container setups with Docker Compose — a must-have DevOps tool.",
-        tags: ["Docker", "Compose", "DevOps"],
-      },
-      {
-        title: "Volumes & Networking",
-        slug: "docker-volumes-networking",
-        description:
-          "Understand persistent data storage and inter-container communication in Docker.",
-        tags: ["Docker", "Volumes", "Networking"],
+          "Explore how to run commands and inspect what’s happening inside your Docker containers.",
+        tags: ["Docker", "DevOps"],
       },
     ],
   },
