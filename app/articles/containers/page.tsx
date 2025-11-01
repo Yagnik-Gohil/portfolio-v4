@@ -14,19 +14,19 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   // ✅ Manual prev/next posts
   const prevPost = {
-    title: "Optimizing React Performance with useMemo",
-    slug: "react-usememo-performance",
+    title: "What is Docker & Docker Hub",
+    slug: "what-is-docker",
   };
 
   const nextPost = {
-    title: "Understanding Containers",
-    slug: "containers",
+    title: "Storage & Volumes",
+    slug: "volumes",
   };
 
   return (
     <div className="container mx-auto px-6 sm:px-10 md:px-16 lg:px-24 py-24 max-w-6xl">
       {/* Blog Header at top */}
-      <BlogHeader title="Understanding Containers" date="Oct 31, 2025" />
+      <BlogHeader title="Understanding Containers" date="Oct 7, 2025" />
 
       {/* 2-column layout: Sidebar + Main Content */}
       <div className="mt-16 flex flex-col lg:flex-row gap-12">

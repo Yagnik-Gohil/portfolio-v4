@@ -14,14 +14,11 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   // ✅ Manual prev/next posts
   const prevPost = {
-    title: "Optimizing React Performance with useMemo",
-    slug: "react-usememo-performance",
+    title: "Storage & Volumes",
+    slug: "volumes",
   };
 
-  const nextPost = {
-    title: "Understanding Containers",
-    slug: "containers",
-  };
+  const nextPost = undefined;
 
   return (
     <div className="container mx-auto px-6 sm:px-10 md:px-16 lg:px-24 py-24 max-w-6xl">
