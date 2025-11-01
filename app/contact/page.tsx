@@ -10,6 +10,12 @@ import {
   Crown,
   Dribbble,
 } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact | Yagnik Gohil",
+  description: "Get in touch with Yagnik Gohil via email or social platforms.",
+};
 
 export default function Contact() {
   return (

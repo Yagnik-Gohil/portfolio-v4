@@ -19,7 +19,7 @@ export const bodyFont = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Yagnik Gohil | Portfolio",
+  title: "Yagnik Gohil",
   description:
     "Yagnik Gohil — Backend-focused software engineer skilled in Go, JavaScript, SQL, and more.",
   keywords: [
