@@ -73,15 +73,6 @@ export default function Contact() {
           </li>
           <li>
             <Link
-              href="https://www.boot.dev/u/yagnik"
-              target="_blank"
-              className="flex items-center gap-3 hover:opacity-80 transition"
-            >
-              <Terminal className="w-5 h-5" /> Boot.dev
-            </Link>
-          </li>
-          <li>
-            <Link
               href="https://leetcode.com/u/yagnik-gohil"
               target="_blank"
               className="flex items-center gap-3 hover:opacity-80 transition"
@@ -96,15 +87,6 @@ export default function Contact() {
               className="flex items-center gap-3 hover:opacity-80 transition"
             >
               <Crown className="w-5 h-5" /> Chess.com
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="https://www.instagram.com/wisdom.not.found/"
-              target="_blank"
-              className="flex items-center gap-3 hover:opacity-80 transition"
-            >
-              <Camera className="w-5 h-5" /> Photography
             </Link>
           </li>
           <li>

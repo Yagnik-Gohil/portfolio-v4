@@ -128,8 +128,7 @@ export default function About() {
         </p>
         <p className="text-base sm:text-lg leading-relaxed">
           Previously at <span className="font-semibold">TatvaSoft</span>,
-          building web apps and improving database performance using .NET and
-          SQL.
+          building web apps and improving database performance.
         </p>
       </motion.section>
 
