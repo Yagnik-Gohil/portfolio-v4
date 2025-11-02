@@ -75,6 +75,7 @@ export default function RootLayout({
       <head>
         {/* Charset and viewport */}
         <meta charSet="UTF-8" />
+        <link rel="icon" href="/logo.svg" type="image/svg+xml" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         {/* Google AdSense */}

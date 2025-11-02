@@ -55,18 +55,18 @@ export const allSeries: Series[] = [
 ];
 
 export const allArticles: Article[] = [
-  {
-    title: "Optimizing React Performance with useMemo",
-    slug: "react-usememo-performance",
-    description:
-      "How to identify re-render bottlenecks and fix them with memoization.",
-    tags: ["React", "Performance", "Frontend"],
-  },
-  {
-    title: "Mastering Git Rebase",
-    slug: "git-rebase-guide",
-    description:
-      "A developer-friendly guide to Git rebase, conflict resolution, and workflow best practices.",
-    tags: ["Git", "Version Control"],
-  },
+  // {
+  //   title: "Optimizing React Performance with useMemo",
+  //   slug: "react-usememo-performance",
+  //   description:
+  //     "How to identify re-render bottlenecks and fix them with memoization.",
+  //   tags: ["React", "Performance", "Frontend"],
+  // },
+  // {
+  //   title: "Mastering Git Rebase",
+  //   slug: "git-rebase-guide",
+  //   description:
+  //     "A developer-friendly guide to Git rebase, conflict resolution, and workflow best practices.",
+  //   tags: ["Git", "Version Control"],
+  // },
 ];
