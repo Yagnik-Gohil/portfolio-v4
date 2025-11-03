@@ -69,10 +69,10 @@ docker help`,
           ID, and exposed ports.
         </p>
         <p>
-          Open your browser and visit
-          <a href="http://localhost:3000" target="_blank">
+          Open your browser and visit{" "}
+          <Link href="http://localhost:3000" target="_blank">
             http://localhost:3000
-          </a>
+          </Link>{" "}
           — it should display the Docker Getting Started app.
         </p>
       </section>
@@ -189,16 +189,22 @@ docker exec CONTAINER_ID ls`,
       <section>
         <h2>Key Takeaways</h2>
         <ul>
-          <li><code>docker help</code> shows available commands</li>
+          <li>
+            <code>docker help</code> shows available commands
+          </li>
           <li>
             <code>docker run -d -p 3000:80 docker/getting-started</code> runs a
             test container
           </li>
-          <li><code>docker ps</code> lists active containers</li>
+          <li>
+            <code>docker ps</code> lists active containers
+          </li>
           <li>
             <code>docker exec</code> lets you run commands or open a live shell
           </li>
-          <li><code>netstat</code> helps inspect what’s running inside</li>
+          <li>
+            <code>netstat</code> helps inspect what’s running inside
+          </li>
           <li>
             You can safely modify files inside a container in real time — great
             for learning or debugging

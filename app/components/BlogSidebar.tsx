@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { USER_IMAGE } from "../data/constant";
 
 interface BlogSidebarProps {
   prevPost?: { slug: string; title: string };
@@ -20,7 +21,7 @@ export default function BlogSidebar({ prevPost, nextPost }: BlogSidebarProps) {
       {/* Author */}
       <div className="mb-8 text-center">
         <Image
-          src="https://d21r3yo3pas5u.cloudfront.net/profile/01.jpg"
+          src={USER_IMAGE}
           alt="Yagnik Gohil"
           width={80}
           height={80}

@@ -122,7 +122,7 @@ export default function ArticlesClient({ series, articles }: ArticlesClientProps
                 <h3 className="font-semibold text-lg group-hover:text-[hsl(var(--primary))]">
                   {article.title}
                 </h3>
-                <p className="text-sm opacity-70 mt-1 line-clamp-2">
+                <p className="text-sm opacity-70 mt-1">
                   {article.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mt-2">

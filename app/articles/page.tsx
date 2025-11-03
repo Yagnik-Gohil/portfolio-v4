@@ -2,11 +2,18 @@ import { Metadata } from "next";
 import { Suspense } from "react";
 import ArticlesClient from "./Articles";
 import { allSeries, allArticles } from "@/app/data/seriesData";
+import { USER_IMAGE } from "../data/constant";
+import { makeMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Articles | Yagnik Gohil",
-  description: "Technical blogs and learning series by Yagnik Gohil.",
-};
+export async function generateMetadata() {
+  return makeMetadata({
+    title: "Articles | Yagnik Gohil",
+    description:
+      "Technical blogs and learning series by Yagnik Gohil.",
+    path: `/articles`,
+    image: USER_IMAGE,
+  });
+}
 
 export default function ArticlesPage() {
   return (

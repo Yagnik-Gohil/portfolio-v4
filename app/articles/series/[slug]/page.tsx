@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { allSeries } from "@/app/data/seriesData";
 import { CircleArrowLeft } from "lucide-react";
+import { makeMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return allSeries.map((s) => ({
@@ -13,22 +14,26 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string } | Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+
   const series = allSeries.find((s) => s.slug === slug);
 
   if (!series) {
-    return {
+    return makeMetadata({
       title: "Series Not Found | Yagnik Gohil",
       description: "This series could not be found.",
-    };
+      path: `/articles/series/${slug}`,
+    });
   }
 
-  return {
+  return makeMetadata({
     title: `${series.title} | Yagnik Gohil`,
     description: series.description,
-  };
+    path: `/articles/series/${series.slug}`,
+    image: series.image ?? null,
+  });
 }
 
 export default async function SeriesPage({

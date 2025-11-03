@@ -3,19 +3,23 @@ import {
   Mail,
   Linkedin,
   Github,
-  Terminal,
   Laptop,
   Twitter,
-  Camera,
   Crown,
   Dribbble,
 } from "lucide-react";
-import { Metadata } from "next";
+import { USER_IMAGE } from "../data/constant";
+import { makeMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact | Yagnik Gohil",
-  description: "Get in touch with Yagnik Gohil via email or social platforms.",
-};
+export async function generateMetadata() {
+  return makeMetadata({
+    title: "Contact | Yagnik Gohil",
+    description:
+      "Get in touch with Yagnik Gohil via email or social platforms.",
+    path: `/contact`,
+    image: USER_IMAGE,
+  });
+}
 
 export default function Contact() {
   return (
