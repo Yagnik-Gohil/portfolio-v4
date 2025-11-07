@@ -1,4 +1,3 @@
-import { Metadata } from "next";
 import { Suspense } from "react";
 import ArticlesClient from "./Articles";
 import { allSeries, allArticles } from "@/app/data/seriesData";

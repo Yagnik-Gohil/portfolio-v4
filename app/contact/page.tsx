@@ -45,7 +45,7 @@ export default function Contact() {
           </li>
           <li>
             <Link
-              href="https://www.linkedin.com/in/yagnik-gohil-087601189"
+              href="https://www.linkedin.com/in/yagnik-gohil"
               target="_blank"
               className="flex items-center gap-3 hover:opacity-80 transition"
             >
