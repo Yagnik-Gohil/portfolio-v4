@@ -38,16 +38,17 @@ docker help`,
       </section>
 
       <section>
-        <h2>Starting the &quot;Getting Started&quot; Container</h2>
+        <h2>Starting the &quot;Nginx&quot; Container</h2>
         <p>
-          Docker provides a simple demo image called
-          <code>docker/getting-started</code>. It’s great for practicing basic
-          container management. Let’s run it on port <strong>3000</strong>:
+          The official <code>nginx</code> image from Docker Hub makes it easy to
+          run a lightweight web server. You can use it to test deployments or
+          serve static content locally.
         </p>
+
         <Terminal
           data={[
             {
-              command: "docker run -d -p 3000:80 docker/getting-started",
+              command: "docker run -d -p 3000:80 library/nginx:latest",
             },
           ]}
         />
@@ -73,7 +74,7 @@ docker help`,
           <Link href="http://localhost:3000" target="_blank">
             http://localhost:3000
           </Link>{" "}
-          — it should display the Docker Getting Started app.
+          — it should display the default Nginx welcome page.
         </p>
       </section>
 
@@ -144,7 +145,11 @@ docker exec CONTAINER_ID ls`,
             <strong>-t</strong> → allocates a terminal (TTY)
           </li>
         </ul>
-        <pre>docker exec -it CONTAINER_ID /bin/sh</pre>
+        <br></br>
+        <Terminal
+          data={[{ command: "docker exec -it CONTAINER_ID /bin/sh" }]}
+        />
+        <br></br>
 
         <Alert title="Tip:" type="neutral">
           This feels like SSH — you’re now “inside” the container’s terminal
@@ -155,7 +160,7 @@ docker exec CONTAINER_ID ls`,
         <Terminal
           data={[
             {
-              command: "cd /usr/share/nginx/html/tutorial",
+              command: "cd /usr/share/nginx/html",
             },
           ]}
         />
@@ -193,7 +198,7 @@ docker exec CONTAINER_ID ls`,
             <code>docker help</code> shows available commands
           </li>
           <li>
-            <code>docker run -d -p 3000:80 docker/getting-started</code> runs a
+            <code>docker run -d -p 3000:80 library/nginx:latest</code> runs a
             test container
           </li>
           <li>

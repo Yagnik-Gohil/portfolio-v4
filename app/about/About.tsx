@@ -102,6 +102,12 @@ export default function About() {
         year: "2025",
         link: "https://www.boot.dev/certificates/fd10ca54-d5b2-48d8-978c-67e9ecd3ebeb",
       },
+      {
+        name: "Docker",
+        issuer: "Boot.dev",
+        year: "2025",
+        link: "https://www.boot.dev/certificates/2b436cd9-1353-43b2-9aa7-54d9cd0e7dec",
+      }
     ],
   };
 

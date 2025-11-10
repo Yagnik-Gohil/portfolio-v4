@@ -30,8 +30,10 @@ function Content() {
 
         <Alert title="Volume Explained:">
           Think of a volume as a shared “folder” that stays alive even after
-          your container is gone. It’s like plugging in a USB drive — your app
-          can use it, but the data lives outside.
+          your container is gone. It’s like plugging in a USB drive or inserting
+          a memory card — your app can use it to read and write data, but the
+          information stays on the card even if the container (or the app) is
+          removed.
         </Alert>
 
         <p>In short, volumes:</p>
@@ -74,7 +76,7 @@ function Content() {
 
         <p>
           Using the volume name (e.g.
-          <code>-v pgdata:/var/lib/postgresql/data</code>) tells Docker to mount
+          <code>-v pgdata:/var/lib/postgresql</code>) tells Docker to mount
           the existing volume into the container at the specified location.
         </p>
       </section>
@@ -94,7 +96,7 @@ function Content() {
   -e POSTGRES_USER=demo \\
   -e POSTGRES_PASSWORD=demo123 \\
   -e POSTGRES_DB=demo_db \\
-  -v pgdata:/var/lib/postgresql/data \\
+  -v pgdata:/var/lib/postgresql \\
   -p 5432:5432 \\
   postgres`,
             },
@@ -104,7 +106,7 @@ function Content() {
         <br></br>
         <ul>
           <li>
-            <strong>-v pgdata:/var/lib/postgresql/data</strong> → mounts our
+            <strong>-v pgdata:/var/lib/postgresql</strong> → mounts our
             named volume inside the container
           </li>
           <li>
@@ -252,7 +254,7 @@ docker run -d \\
   -e POSTGRES_USER=demo \\
   -e POSTGRES_PASSWORD=demo123 \\
   -e POSTGRES_DB=demo_db \\
-  -v pgdata:/var/lib/postgresql/data \\
+  -v pgdata:/var/lib/postgresql \\
   -p 5432:5432 \\
   postgres`,
             },

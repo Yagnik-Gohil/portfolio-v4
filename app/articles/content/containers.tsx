@@ -111,8 +111,10 @@ function Content() {
         <Terminal
           data={[
             {
-              command:
-                "docker run -d -p 3000:80 library/nginx:latest docker ps",
+              command: "docker run -d -p 3000:80 library/nginx:latest",
+            },
+            {
+              command: "docker ps",
             },
           ]}
         />
@@ -138,7 +140,16 @@ function Content() {
           </li>
         </ul>
         <p>Example:</p>
-        <Terminal data={[{ command: "docker ps docker stop CONTAINER_ID" }]} />
+        <Terminal
+          data={[
+            {
+              command: "docker ps",
+            },
+            {
+              command: "docker stop CONTAINER_ID",
+            },
+          ]}
+        />
         <p>Refreshing the webpage now should show the server is down.</p>
       </section>
 
