@@ -48,15 +48,6 @@ function Content() {
           A container is ephemeral — it can be destroyed at any time. The image
           remains unchanged and can be used to spin up new containers
           consistently.
-          <span className="block mt-3 text-sm text-gray-800 font-medium italic">
-            “Though your body will decay, your spirit lingers on.”
-          </span>
-          <span className="block mt-1 text-sm text-gray-700">
-            — Professor Horace Slughorn,{" "}
-            <span className="italic">
-              Harry Potter and the Half-Blood Prince
-            </span>
-          </span>
         </Alert>
       </section>
 

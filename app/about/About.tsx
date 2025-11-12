@@ -1,45 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github, Award } from "lucide-react";
-import Link from "next/link";
+import { Award } from "lucide-react";
 
 export default function About() {
-  const projects = [
-    {
-      title: "Skribbl",
-      year: "2024",
-      type: "Website",
-      desc: "A multiplayer drawing and guessing game built with real-time socket connections.",
-      tags: ["Multiplayer", "Game", "Real-time"],
-      links: {
-        github: "https://github.com/Yagnik-Gohil/skribbl",
-        live: "https://skribbl.yagnik.dev",
-      },
-    },
-    {
-      title: "Ambient Chaos",
-      year: "2024",
-      type: "Website",
-      desc: "A web app that lets users create personalized ambient sound environments.",
-      tags: ["Music", "Ambient", "Relaxation"],
-      links: {
-        github: "https://github.com/Yagnik-Gohil/Ambient-Chaos",
-        live: "https://ambient-chaos.yagnik.dev",
-      },
-    },
-    {
-      title: "Pokedex CLI",
-      year: "2024",
-      type: "CLI Tool",
-      desc: "A command-line Pokédex built in Go using PokéAPI with terminal-based UI.",
-      tags: ["Go", "CLI", "PokéAPI", "Terminal UI"],
-      links: {
-        github: "https://github.com/Yagnik-Gohil/pokedex-cli",
-      },
-    },
-  ];
-
   const certificates = {
     Go: [
       {
@@ -107,7 +71,7 @@ export default function About() {
         issuer: "Boot.dev",
         year: "2025",
         link: "https://www.boot.dev/certificates/2b436cd9-1353-43b2-9aa7-54d9cd0e7dec",
-      }
+      },
     ],
   };
 
@@ -138,165 +102,6 @@ export default function About() {
         </p>
       </motion.section>
 
-      {/* Projects */}
-      <motion.section
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="space-y-10"
-      >
-        <h1 className="text-4xl sm:text-5xl font-bold mb-4">Fun Projects</h1>
-
-        <div className="grid sm:grid-cols-2 gap-6">
-          {projects.map((project, i) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="group relative p-6 rounded-xl border border-[hsl(var(--border))]/40 bg-[hsl(var(--muted))]/20 hover:bg-[hsl(var(--muted))]/35 transition-colors duration-300"
-            >
-              <div className="flex flex-col justify-between h-full">
-                <div>
-                  <h3 className="text-lg font-semibold tracking-tight">
-                    {project.title}{" "}
-                    <span className="text-sm opacity-60">({project.year})</span>
-                  </h3>
-                  <p className="text-sm mt-1 opacity-70">{project.type}</p>
-                  <p className="mt-3 text-base leading-relaxed opacity-90">
-                    {project.desc}
-                  </p>
-                </div>
-
-                <div className="mt-4 space-y-2">
-                  <ul className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <li
-                        key={tag}
-                        className="px-2 py-0.5 text-xs rounded-full border border-[hsl(var(--border))]/40 text-[hsl(var(--foreground))]/80"
-                      >
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="flex gap-4 text-sm opacity-80">
-                    {project.links.github && (
-                      <Link
-                        href={project.links.github}
-                        target="_blank"
-                        className="flex items-center gap-1 hover:underline"
-                      >
-                        <Github size={14} /> GitHub
-                      </Link>
-                    )}
-                    {project.links.live && (
-                      <Link
-                        href={project.links.live}
-                        target="_blank"
-                        className="flex items-center gap-1 hover:underline"
-                      >
-                        <ArrowUpRight size={14} /> Live
-                      </Link>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-
-          {/* Portfolio Versions Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: projects.length * 0.1 }}
-            className="group relative p-6 rounded-xl border border-[hsl(var(--border))]/40 bg-[linear-gradient(135deg,rgba(255,0,150,0.05)_0%,rgba(0,204,255,0.05)_100%)] hover:bg-[linear-gradient(135deg,rgba(255,0,150,0.1)_0%,rgba(0,204,255,0.1)_100%)] transition-all duration-500"
-          >
-            <div className="flex flex-col justify-between h-full">
-              <div>
-                <h3 className="text-lg font-semibold tracking-tight">
-                  Portfolio Versions{" "}
-                  <span className="text-sm opacity-60">(v1–v4)</span>
-                </h3>
-                <p className="text-sm mt-1 opacity-70">
-                  A journey through design
-                </p>
-                <p className="mt-3 text-base leading-relaxed opacity-90">
-                  I’ve built four versions of my portfolio. Each version
-                  explores a new approach — from classic layouts to raw,
-                  minimal, and modern designs.
-                </p>
-              </div>
-
-              <div className="mt-4 space-y-3">
-                <ul className="flex flex-wrap gap-2">
-                  {["UI Design", "Next.js", "Tailwind", "Vanilla JS"].map(
-                    (tag) => (
-                      <li
-                        key={tag}
-                        className="px-2 py-0.5 text-xs rounded-full border border-[hsl(var(--border))]/40 text-[hsl(var(--foreground))]/80"
-                      >
-                        {tag}
-                      </li>
-                    )
-                  )}
-                </ul>
-
-                <div className="flex flex-col gap-2 text-sm opacity-85">
-                  {[
-                    {
-                      v: "v1",
-                      link: "https://v1.yagnik.dev",
-                      github: "https://github.com/Yagnik-Gohil/Portfolio",
-                      tech: "React + Bootstrap (2022)",
-                    },
-                    {
-                      v: "v2",
-                      link: "https://v2.yagnik.dev",
-                      github: "https://github.com/Yagnik-Gohil/portfolio-v2",
-                      tech: "React + Tailwind (2024)",
-                    },
-                    {
-                      v: "v3",
-                      link: "https://v3.yagnik.dev",
-                      github: "https://github.com/Yagnik-Gohil/portfolio-v3",
-                      tech: "HTML + CSS + JS (2025)",
-                    },
-                    {
-                      v: "v4",
-                      link: "/",
-                      github: "https://github.com/Yagnik-Gohil/portfolio-v4",
-                      tech: "Next.js + Motion (2025) • Current",
-                    },
-                  ].map(({ v, link, github, tech }) => (
-                    <div key={v} className="flex flex-wrap gap-3 items-center">
-                      <Link
-                        href={link}
-                        target="_blank"
-                        className="flex items-center gap-1 hover:underline"
-                      >
-                        <ArrowUpRight size={14} /> {v}
-                      </Link>
-                      <Link
-                        href={github}
-                        target="_blank"
-                        className="flex items-center gap-1 hover:underline"
-                      >
-                        <Github size={14} /> GitHub
-                      </Link>
-                      <p className="opacity-60 text-xs ml-1">• {tech}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </motion.section>
-
       {/* Certificates */}
       <motion.section
         initial={{ opacity: 0, y: 30 }}
@@ -305,7 +110,7 @@ export default function About() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="space-y-12"
       >
-        <h1 className="text-4xl sm:text-5xl font-bold mb-4">Certificates</h1>
+        <h1 className="text-4xl sm:text-5xl font-bold mb-4">Skills</h1>
 
         {Object.entries(certificates).map(([category, certs]) => (
           <div key={category} className="space-y-4">
