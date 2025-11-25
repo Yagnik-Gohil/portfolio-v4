@@ -26,7 +26,7 @@ export const allArticles: Article[] = [
       "Explore what Docker is, its purpose, core concepts, and how Docker Hub helps share and fetch container images.",
     tags: ["Docker"],
     image:
-      "https://d21r3yo3pas5u.cloudfront.net/thumbnail/docker-and-docker-hub.png",
+      "https://d21r3yo3pas5u.cloudfront.net/thumbnail/docker-and-docker-hub.webp",
     date: "Oct 6, 2025",
     next: "containers",
   },
@@ -36,7 +36,7 @@ export const allArticles: Article[] = [
     description:
       "Learn about containers, how they differ from virtual machines, and how to run, stop, and manage them effectively.",
     tags: ["Docker", "Images", "Containers"],
-    image: "https://d21r3yo3pas5u.cloudfront.net/thumbnail/containers.png",
+    image: "https://d21r3yo3pas5u.cloudfront.net/thumbnail/containers.webp",
     date: "Oct 7, 2025",
     prev: "what-is-docker",
     next: "volumes",
@@ -48,7 +48,7 @@ export const allArticles: Article[] = [
       "Understand Docker volumes and how to persist data safely across containers.",
     tags: ["Docker", "Volumes"],
     image:
-      "https://d21r3yo3pas5u.cloudfront.net/thumbnail/storage-and-volumes.png",
+      "https://d21r3yo3pas5u.cloudfront.net/thumbnail/storage-and-volumes.webp",
     date: "Oct 9, 2025",
     prev: "containers",
     next: "managing-and-inspecting-containers",
@@ -60,9 +60,21 @@ export const allArticles: Article[] = [
       "Explore how to run commands and inspect what’s happening inside your Docker containers.",
     tags: ["Docker", "DevOps"],
     image:
-      "https://d21r3yo3pas5u.cloudfront.net/thumbnail/inspect-containers.png",
+      "https://d21r3yo3pas5u.cloudfront.net/thumbnail/inspect-containers.webp",
     date: "Oct 15, 2025",
     prev: "volumes",
+    next: "docker-networks",
+  },
+  {
+    title: "Understanding Docker Networking",
+    slug: "docker-networks",
+    description:
+      "Learn how containers communicate privately using Docker networks, and explore service discovery with nginx and Node.",
+    tags: ["Docker", "Networking", "nginx", "Node.js"],
+    image:
+      "https://d21r3yo3pas5u.cloudfront.net/thumbnail/docker-networks.webp",
+    date: "Nov 25, 2025",
+    prev: "managing-and-inspecting-containers",
   },
 ];
 
@@ -81,6 +93,7 @@ export const allSeries: Series[] = [
         "managing-and-inspecting-containers",
       ].includes(a.slug)
     ),
-    image: "https://d21r3yo3pas5u.cloudfront.net/thumbnail/docker-and-docker-hub.png",
+    image:
+      "https://d21r3yo3pas5u.cloudfront.net/thumbnail/docker-and-docker-hub.webp",
   },
 ];
