@@ -76,6 +76,16 @@ export const allArticles: Article[] = [
     date: "Nov 25, 2025",
     prev: "managing-and-inspecting-containers",
   },
+  {
+    title: "Building Flag Guesser with Claude",
+    slug: "flag-guesser-built-with-claude-code",
+    description:
+      "How I built Flag Guesser, a free flag quiz with three routes, smart look-alike options and a passport theme, built with Claude Code in about two days.",
+    tags: ["Claude Code", "Game Dev", "AWS"],
+    image:
+      "https://d21r3yo3pas5u.cloudfront.net/thumbnail/flag-guesser.webp",
+    date: "Oct 18, 2026",
+  },
 ];
 
 export const allSeries: Series[] = [
@@ -95,5 +105,17 @@ export const allSeries: Series[] = [
     ),
     image:
       "https://d21r3yo3pas5u.cloudfront.net/thumbnail/docker-and-docker-hub.webp",
+  },
+  {
+    title: "Building with Claude",
+    slug: "building-with-claude",
+    description:
+      "Real projects I've designed and shipped with Claude Code: the setup, the workflow, the decisions and what I learned along the way.",
+    tags: ["Claude Code", "Game Dev", "AWS"],
+    posts: allArticles.filter((a) =>
+      ["flag-guesser-built-with-claude-code"].includes(a.slug)
+    ),
+    image:
+      "https://d21r3yo3pas5u.cloudfront.net/thumbnail/flag-guesser.webp",
   },
 ];
