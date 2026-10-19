@@ -22,8 +22,8 @@ function Content() {
         <p>
           I built it with <strong>Claude Code</strong> over about two days. The
           first commit landed on 17 October 2026, and it took about 30 commits.
-          This post covers why I made it, how it plays, and what building it
-          with Claude Code was actually like.
+          This post covers why I made it, how it plays, and how it was
+          designed.
         </p>
       </section>
 
@@ -97,77 +97,15 @@ function Content() {
       </section>
 
       <section>
-        <h2>Building It with Claude Code</h2>
+        <h2>Designing It</h2>
         <p>
-          Claude wrote the code. My part was the game design, the decisions
-          and a lot of playtesting. But before any of that could work, Claude
-          needed somewhere to work.
+          It started as a written plan, not code: the rules, the screens, the
+          order of the flags and what was out of scope. Claude Code wrote the
+          code from that plan, and the game runs as static files on AWS.
+          That’s the whole technical story.
         </p>
 
-        <h3>First, the setup</h3>
-        <p>
-          A fresh Claude Code install knows nothing about your project, your
-          conventions or your rules. The context, guidelines, checks and
-          guardrails around it are the harness, and on my personal machine I
-          had none of it. So the first real piece of engineering on this
-          project was building that harness myself, from scratch:
-        </p>
-        <ul>
-          <li>
-            <strong>The plan as the source of truth.</strong> The game was
-            designed in a <code>PLAN.md</code> before any code existed: rules,
-            data, screens, an out-of-scope list and seven milestones (M1 to
-            M7). The project’s <code>CLAUDE.md</code> was generated from that
-            plan, so every session starts from the same picture.
-          </li>
-          <li>
-            <strong>Guidelines for consistency.</strong> A{" "}
-            <code>GUIDELINES.md</code>, referenced from <code>CLAUDE.md</code>,
-            sets the rules: three component layers (UI primitives, game
-            components, screens) with dependencies that only point downward,
-            no game rules inside components, and no duplicated UI. All styling
-            goes through design tokens, so the whole theme can be rebranded
-            from one place.
-          </li>
-          <li>
-            <strong>Quality gates.</strong> Strict TypeScript, around 300
-            Vitest and React Testing Library tests, axe-core accessibility
-            checks on every screen, ESLint, Stylelint, Prettier, cspell and a
-            data validation script. CI runs the same checks on every push.
-            Nothing counts as done until they pass.
-          </li>
-          <li>
-            <strong>Guardrails.</strong> Deploy scripts are git-ignored, and a
-            deny rule in <code>.claude/settings.json</code> stops Claude from
-            running them. Anything that leaves my machine, like deploys, pushes,
-            DNS or AWS changes, needs my say first.
-          </li>
-          <li>
-            <strong>A centralised context.</strong> A{" "}
-            <code>control-room</code> folder at the root of
-            my workspace holds no code, only a <code>CLAUDE.md</code> with the
-            workspace layout, every app’s stack and commands, the hosting and
-            deploy setup, and the ground rules. Each app keeps its own{" "}
-            <code>CLAUDE.md</code>, and control-room ties them together for
-            the apps that come next.
-          </li>
-        </ul>
-
-        <h3>Then, mostly talking</h3>
-        <p>
-          With the harness in place, the work became a loop. Claude builds a
-          milestone against the plan, the checks pass, I play it, and I
-          approve it. Nothing is committed until I say so. Once all seven
-          milestones were in, a final audit compared the code against the
-          original plan to make sure nothing had been missed.
-        </p>
-        <Alert type="info" title="Why it worked:">
-          Small milestones, a human checkpoint between each one, and commits
-          only on my word. I always knew what had changed and could stop or
-          revert at any point.
-        </Alert>
-
-        <h3>The UI revamp</h3>
+        <h3>From quiz to game</h3>
         <p>
           The first playable version worked, but it looked like every other
           flag quiz, which is exactly what I set out to avoid. The new
@@ -182,14 +120,14 @@ function Content() {
           trying an idea takes minutes, throwing it away costs nothing.
         </p>
 
-        <h3>Shipping it on AWS</h3>
+        <h3>Playtesting decides</h3>
         <p>
-          The game is static files in a private <strong>S3</strong> bucket
-          behind <strong>CloudFront</strong>. Deploys don’t use admin keys.
-          They run as a CLI-only IAM user whose policy can only write to site
-          buckets and clear the CloudFront cache, so a leaked key couldn’t touch
-          anything else. That user and one deploy script are shared by every
-          app I ship.
+          Playing it, I couldn’t feel any real difference between the three
+          routes. On paper they were different, but in my hands they felt the
+          same. So each route got its own rules and its own identity: hearts,
+          a flag that hides, and finally a memory mode where the options only
+          appear after the flag is gone. That last idea came after the game
+          was already live.
         </p>
 
         <h3>Looking back</h3>
