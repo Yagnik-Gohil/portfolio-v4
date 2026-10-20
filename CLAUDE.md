@@ -38,3 +38,14 @@ Components used inside article bodies (`app/components/`):
 **Theming.** Colors are HSL triples stored as CSS variables in `app/globals.css` (`:root`, plus a `.dark` override) and used as `hsl(var(--name))`, usually through arbitrary values like `bg-[hsl(var(--muted))]`. Fonts come from `next/font` in `app/layout.tsx` (Poppins → `--font-heading`, Inter → `--font-body`). `tailwind.config.js` is a legacy v3-style file: Tailwind v4 doesn't load it because there's no `@config`, and its `content` globs point at a non-existent `src/`. So don't rely on its theme extensions.
 
 `app/layout.tsx` contains the site-wide metadata, the Google AdSense script, and the `Navbar`/`Footer` shell.
+
+<!-- control-room:begin -->
+## Workspace (control room)
+
+This repo is part of a workspace run from a sibling `control-room` folder. When that folder exists, its shared rules and this repo's workspace context load below; when it doesn't (e.g. a fresh clone of this repo alone), the imports are skipped and nothing else changes.
+
+@../control-room/rules/core.md
+@../control-room/rules/git.md
+@../control-room/rules/public-repo.md
+@../control-room/.local/repos/portfolio-v4.md
+<!-- control-room:end -->
